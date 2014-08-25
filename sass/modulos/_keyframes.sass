@@ -1,0 +1,23 @@
+// Aqui serão definidos mixins auxiliares ao uso de keyframes, a base para todas as animações do projeto
+
+// keyframes mixin
+=keyframes($nome)
+	@-webkit-keyframes #{$nome}
+		@content
+	@-moz-keyframes #{$nome}
+		@content
+	@-ms-keyframes #{$nome}
+		@content
+	@-ms-keyframes #{$nome}
+		@content
+	@keyframes #{$nome}
+		@content
+
+// Exemplo
+// +keyframes(bgcolor)
+// 	0%
+// 		background-color: #ffccf2
+// 	50%
+// 		background-color: #ccffcc
+// 	100%
+// 		background-color: #ccffff
