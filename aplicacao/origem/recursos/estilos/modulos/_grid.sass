@@ -1,0 +1,12 @@
+// Aqui serão definidos mixins relativos aos grids
+
+// grid pai mixin
+=grid-pai()
+    display: flex
+    flex-flow: row wrap
+
+// grid filho mixin
+=grid-filho($numero-de-colunas-ocupadas)
+    flex-grow: 1
+
+    @if $numero-de-colunas-ocupadas
