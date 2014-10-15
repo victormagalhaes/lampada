@@ -45,9 +45,9 @@ gulp.task 'minify', ['coffee-producao'], ->
     .on 'error', gutil.log
 
 
-# Copiar outros recursos (imagens, fontes, etc)
+# Imagens
 
-gulp.task 'outros-recursos', ->
-    gulp.src parametros.recursos + '/**'
-    .pipe gulp.dest parametros.producao
+gulp.task 'imagens-producao', ->
+    gulp.src parametros.recursos + '/imagens/**'
+    .pipe gulp.dest parametros.producao + '/imagens'
     .on 'error', gutil.log
