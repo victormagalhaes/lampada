@@ -1,2 +1,2 @@
 require('coffee-script/register');
-require('./origem/configuracoes/gulpfile.coffee');
+require('./aplicacao/origem/configuracoes/gulpfile.coffee');

@@ -1,5 +1,5 @@
 gulp = require 'gulp'
-parametros = require 'parametros.coffee'
+parametros = require './parametros.coffee'
 
 
 # Coffee

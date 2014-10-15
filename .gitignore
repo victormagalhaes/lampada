@@ -1,1 +1,13 @@
+.DS_Store
+*.log
+node_modules
+build
+*.node
 .sass-cache
+*.css.map
+logs
+*.log
+.grunt
+*.sublime-project
+*.sublime-workspace
+sftp-config*.json
