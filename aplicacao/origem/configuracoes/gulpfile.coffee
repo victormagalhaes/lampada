@@ -3,9 +3,9 @@ parametros = require './parametros.coffee'
 
 
 # Coffee
-coffee  = require 'gulp-coffee'
-concat  = require 'gulp-concat'
-gutil   = require 'gulp-util'
+coffee = require 'gulp-coffee'
+concat = require 'gulp-concat'
+gutil = require 'gulp-util'
 
 gulp.task 'coffee-producao', ->
     gulp.src parametros.scripts + '/*.coffee'
@@ -15,8 +15,18 @@ gulp.task 'coffee-producao', ->
     .on 'error', gutil.log
 
 
+# Minificar JS
+uglify = require 'gulp-uglify'
+
+gulp.task 'minify', ['coffee-producao'], ->
+    gulp.src parametros.producao + '/js/**.js'
+    .pipe uglify outSourceMap: true
+    .pipe gulp.dest parametros.producao + '/js'
+    .on 'error', gutil.log
+
+
 # Jade
-jade    = require 'gulp-jade'
+jade = require 'gulp-jade'
 
 gulp.task 'jade-producao', ->
     gulp.src parametros.templates + '/*.jade'
@@ -26,7 +36,7 @@ gulp.task 'jade-producao', ->
 
 
 # Sass
-sass    = require 'gulp-sass'
+sass = require 'gulp-ruby-sass'
 
 gulp.task 'sass-producao', ->
     gulp.src parametros.arquivo_base_sass
@@ -35,19 +45,15 @@ gulp.task 'sass-producao', ->
     .on 'error', gutil.log
 
 
-# Minificar JS
-uglify  = require 'gulp-uglify'
-
-gulp.task 'minify', ['coffee-producao'], ->
-    gulp.src parametros.producao + '/js/**.js'
-    .pipe uglify outSourceMap: true
-    .pipe gulp.dest parametros.producao + '/js'
-    .on 'error', gutil.log
-
-
 # Imagens
-
 gulp.task 'imagens-producao', ->
     gulp.src parametros.recursos + '/imagens/**'
     .pipe gulp.dest parametros.producao + '/imagens'
     .on 'error', gutil.log
+
+
+# Default, ou seja: observar os arquivos
+gulp.task 'default', ->
+    gulp.watch parametros.recursos + '/**/*.coffee', ['coffee-producao']
+    gulp.watch parametros.recursos + '/**/*.sass', ['sass-producao']
+    gulp.watch parametros.recursos + '/*.jade', ['jade-producao']

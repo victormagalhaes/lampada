@@ -21,8 +21,10 @@
     "gulp-concat": "^2.4.1",
     "gulp-jade": "^0.9.0",
     "gulp-sass": "^1.1.0",
+    "gulp-serve": "^0.2.0",
     "gulp-uglify": "^1.0.1",
-    "gulp-util": "^3.0.1"
+    "gulp-util": "^3.0.1",
+    "gulp-watch": "^1.1.0"
   },
   "engines": {
     "node": ">=0.10.0"
