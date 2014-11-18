@@ -1,20 +1,38 @@
-var aplicacao = 'aplicacao';
-
-var recursos = aplicacao + '/origem/recursos';
+var aplicacao = './aplicacao';
+var origem = aplicacao + '/origem';
+var recursos = aplicacao + origem + '/recursos';
 
 var config = {
+
+    // Raiz do projeto
     aplicacao: aplicacao,
-    origem: aplicacao + '/origem',
+
+    // Caminho onde ficam todos os arquivos fontes
+    origem: origem,
+
+    // Caminho que serão gerados os arquivos para uma versão local ou de desenvolvimento
+    desenvolvimento: aplicacao + '/desenvolvimento',
+
+    // Caminho para qual serão gerados os arquivos otimizados
     producao: aplicacao + '/producao',
-    qa: aplicacao + '/qa',
-    recursos: recursos,
+
+    // Caminho onde ficam armazenados os recursos da framework
+    recursos: aplicacao + '/origem/recursos',
+
+    // Caminho dos templates
     templates: recursos + '/templates',
+
+    // Caminho dos arquivos de estilos
     estilos: recursos + '/estilos',
+
+    // Caminho dos scripts
     scripts: recursos + '/scripts',
+
+    // Caminho das imagens
     imagens: recursos + '/imagens',
-    arquivo_base_sass: recursos + '/estilos/base.sass',
-    arquivo_final_script: 'aplicacao.js',
-    arquivo_final_css: 'aplicacao.css'
+
+    // Nome do arquivo que faz todos os includes de SASS da framework
+    arquivo_base_sass: recursos + '/estilos/base.sass'
 };
 
 module.exports = config;
