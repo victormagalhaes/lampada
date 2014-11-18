@@ -43,7 +43,7 @@ gulp.task('sass', function () {
     gulp
         .src(parametros.arquivo_base_sass)
         .pipe(plumber())
-        .pipe(sass({ sourcemap: false, sourcemapPath: '.' }))
+        .pipe(sass({ sourcemap: true, sourcemapPath: '.' }))
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],
             cascade: false
