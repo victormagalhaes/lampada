@@ -1,14 +1,13 @@
 var aplicacao = './aplicacao';
-var origem = aplicacao + '/origem';
-var recursos = aplicacao + origem + '/recursos';
+var recursos = aplicacao + '/origem/recursos';
 
-var config = {
+var parametros = {
 
     // Raiz do projeto
     aplicacao: aplicacao,
 
     // Caminho onde ficam todos os arquivos fontes
-    origem: origem,
+    origem: aplicacao + '/origem',
 
     // Caminho que serão gerados os arquivos para uma versão local ou de desenvolvimento
     desenvolvimento: aplicacao + '/desenvolvimento',
@@ -35,4 +34,4 @@ var config = {
     arquivo_base_sass: recursos + '/estilos/base.sass'
 };
 
-module.exports = config;
+module.exports = parametros;

@@ -5,29 +5,30 @@ var parametros = require('./parametros.js');
 var gutil = require('gulp-util');
 var plumber = require('gulp-plumber');
 var runSequence = require('run-sequence');
-
-
-// Coffee
 var coffee = require('gulp-coffee');
 var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
+var sass = require('gulp-ruby-sass');
+var autoprefixer = require('gulp-autoprefixer');
+var minifyCSS = require('gulp-minify-css');
+var jade = require('gulp-jade');
 
+// Coffee
 gulp.task('coffee', function() {
-    return gulp
+    gulp
         .src(parametros.scripts + '/*.coffee')
         .pipe(plumber())
         .pipe(coffee({ bare: true}))
         .pipe(plumber.stop())
-        .pipe(gulp.dest(parametros.producao + '/js'))
+        .pipe(gulp.dest(parametros.desenvolvimento + '/js'))
         .on('error', function () { gutil.log(); });
 });
 
 
 // Minificar JS
-var uglify = require('gulp-uglify');
-
 gulp.task('minify', ['coffee'], function() {
-    return gulp
-        .src(parametros.producao + '/js/**.js')
+    gulp
+        .src(parametros.desenvolvimento + '/js/**.js')
         .pipe(plumber())
         .pipe(uglify({ outSourceMap: true}))
         .pipe(plumber.stop())
@@ -37,11 +38,8 @@ gulp.task('minify', ['coffee'], function() {
 
 
 // Sass
-var sass = require('gulp-ruby-sass');
-var autoprefixer = require('gulp-autoprefixer');
-
 gulp.task('sass', function () {
-    return gulp
+    gulp
         .src(parametros.arquivo_base_sass)
         .pipe(plumber())
         .pipe(sass({ sourcemap: false, sourcemapPath: '.' }))
@@ -56,10 +54,8 @@ gulp.task('sass', function () {
 
 
 // Minificar CSS
-var minifyCSS = require('gulp-minify-css');
-
 gulp.task('minificar-css', function() {
-  return gulp.src(parametros.desenvolvimento + '/css/*.css')
+  gulp.src(parametros.desenvolvimento + '/css/*.css')
     .pipe(plumber())
     .pipe(minifyCSS({keepBreaks:true}))
     .pipe(plumber.stop())
@@ -69,10 +65,8 @@ gulp.task('minificar-css', function() {
 
 
 // Jade
-var jade = require('gulp-jade');
-
 gulp.task('jade', function() {
-    return gulp
+    gulp
         .src(parametros.templates + '/*.jade')
         .pipe(plumber())
         .pipe(jade({ pretty: true}))
@@ -84,7 +78,7 @@ gulp.task('jade', function() {
 
 // Imagens
 gulp.task('imagens', function() {
-    return gulp
+    gulp
         .src(parametros.recursos + '/imagens/**')
         .pipe(gulp.dest(parametros.desenvolvimento + '/imagens'))
         .on('error', function () { gutil.log(); });
@@ -103,5 +97,5 @@ gulp.task('monitorar', function() {
 
 // Compilar para desenvolvimento
 gulp.task('compilar-desenvolvimento', function() {
-    runSequence(['coffee', 'sass', 'jade', 'imagens']);
+    runSequence('coffee', 'sass', 'jade', 'imagens');
 });
