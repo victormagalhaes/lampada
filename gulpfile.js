@@ -13,6 +13,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var minifyCSS = require('gulp-minify-css');
 var jade = require('gulp-jade');
 
+
 // Coffee
 gulp.task('coffee', function() {
     gulp
@@ -26,7 +27,7 @@ gulp.task('coffee', function() {
 
 
 // Minificar JS
-gulp.task('minify', ['coffee'], function() {
+gulp.task('minificar-js', function() {
     gulp
         .src(parametros.desenvolvimento + '/js/**.js')
         .pipe(plumber())
@@ -57,7 +58,7 @@ gulp.task('sass', function () {
 gulp.task('minificar-css', function() {
   gulp.src(parametros.desenvolvimento + '/css/*.css')
     .pipe(plumber())
-    .pipe(minifyCSS({keepBreaks:true}))
+    .pipe(minifyCSS())
     .pipe(plumber.stop())
     .pipe(gulp.dest(parametros.producao + '/css'))
     .on('error', function () { gutil.log(); });
@@ -85,6 +86,15 @@ gulp.task('imagens', function() {
 });
 
 
+// Copiar os arquivos para producao
+gulp.task('copiar-producao', function() {
+    gulp
+        .src(parametros.desenvolvimento + '/**')
+        .pipe(gulp.dest(parametros.producao))
+        .on('error', function () { gutil.log(); });
+});
+
+
 // Monitorar, ou seja: observar os arquivos
 gulp.task('monitorar', function() {
     gulp.watch(parametros.recursos + '/**/*.coffee', ['coffee']);
@@ -98,4 +108,10 @@ gulp.task('monitorar', function() {
 // Compilar para desenvolvimento
 gulp.task('compilar-desenvolvimento', function() {
     runSequence('coffee', 'sass', 'jade', 'imagens');
+});
+
+
+// Compilar para producao
+gulp.task('compilar-producao', function() {
+    runSequence('copiar-producao', 'minificar-css', 'minificar-js');
 });
