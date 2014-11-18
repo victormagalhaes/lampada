@@ -2,6 +2,7 @@
  * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
  * http://cssreset.com
  */
+@import url("http://fonts.googleapis.com/css?family=Arvo:400");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -46,25 +47,89 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-body {
-  color: black;
-  width: 800px;
-  margin: auto;
-  opacity: 0.9; }
+.pseudo {
+  display: block !important; }
+
+.colunagem-12 {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
+.colunagem-6 {
+  width: 50%;
+  padding-left: 20px; }
+  .colunagem-6:first-of-type {
+    padding-left: 0; }
+
+.colunagem-6 {
+  width: 50%;
+  padding-left: 20px; }
+  .colunagem-6:first-of-type {
+    padding-left: 0; }
+
+.colunagem-4 {
+  width: 33.33%;
+  padding-left: 20px; }
+  .colunagem-4:first-of-type {
+    padding-left: 0; }
+
+.colunagem-3 {
+  width: 25%;
+  padding-left: 20px; }
+  .colunagem-3:first-of-type {
+    padding-left: 0; }
+
+.colunagem-2 {
+  width: 16.66%;
+  padding-left: 20px; }
+  .colunagem-2:first-of-type {
+    padding-left: 0; }
+
+.placeholder-demo {
+  background-color: #dedede;
+  padding: 20px;
+  text-align: center; }
 
 .botao {
   background: transparent;
   box-sizing: border-box;
-  border: 3px solid;
+  border: 3px solid #bf4163;
   cursor: pointer;
-  color: black;
-  padding: 25px;
-  min-width: 200px;
+  color: #bf4163;
+  padding: 15px;
   display: inline-block;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 10px;
+  font-family: Arvo, Arial, Helvetica, Sans-serif;
   outline: none;
   position: relative;
   transition: all 0.3s; }
+
+.botao-com-fundo {
+  background: #3b67bf;
+  box-sizing: border-box;
+  border: 3px solid #3b67bf;
+  cursor: pointer;
+  color: white;
+  padding: 15px;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-size: 10px;
+  font-family: Arvo, Arial, Helvetica, Sans-serif;
+  outline: none;
+  position: relative;
+  transition: all 0.3s; }
+
+.colunagem-12 {
+  width: 940px;
+  margin: 40px auto; }

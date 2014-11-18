@@ -1,3 +1,4 @@
+@import "modulos/google_font"
 @import "variaveis"
 @import "modulos/reset"
 @import "modulos/grid"
@@ -6,11 +7,22 @@
 @import "modulos/links"
 @import "modulos/botoes"
 
-body
-    color: $cor-2
-    width: 800px
-    margin: auto
-    opacity: 0.9
+// Importando fonte
++google-font("Arvo")
 
+
+// Matriz de exemplos da framework
+.placeholder-demo
+    background-color: #dedede
+    padding: 20px
+    text-align: center
+
+// Botões
 .botao
-    +botao($cor-fonte: $cor-2, $tamanho-fonte: 14px)
+    +botao($cor-fonte: $cor-8, $tamanho-fonte: $tamanho-1, $cor-borda: $cor-8)
+.botao-com-fundo
+    +botao($cor-fonte: $cor-1, $tamanho-fonte: $tamanho-1, $cor-fundo: $cor-9)
+
+.colunagem-12
+    width: 940px
+    margin: 40px auto

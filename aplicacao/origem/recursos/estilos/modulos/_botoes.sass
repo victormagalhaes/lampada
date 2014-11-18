@@ -1,20 +1,20 @@
-=botao($tamanho-fonte, $cor-fonte, $com-fundo: false, $cor-fundo: transparent)
+=botao($tamanho-fonte, $cor-fonte, $com-fundo: false, $cor-fundo: transparent, $cor-borda: $cor-fundo)
     @if com-fundo
         background: $cor-fundo
     @else
         background: none
 
     box-sizing: border-box
-    border: 3px solid
+    border: 3px solid $cor-borda
     cursor: pointer
     color: $cor-fonte
-    padding: 25px
-    min-width: 200px
+    padding: $tamanho-fonte*1.5
     display: inline-block
     text-transform: uppercase
     letter-spacing: 1px
     font-weight: 700
     font-size: $tamanho-fonte
+    font-family: $familia-fonte-2
     outline: none
     position: relative
     transition: all 0.3s

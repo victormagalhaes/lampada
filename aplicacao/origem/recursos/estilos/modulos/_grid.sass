@@ -4,7 +4,43 @@
 =grid-pai()
     display: flex
     flex-flow: row wrap
+    justify-content: space-between
+    @content
 
-// grid filho mixin
-=grid-filho($numero-de-colunas-ocupadas)
-    flex-grow: 1
+.pseudo
+    display: block !important
+
+.colunagem-12
+    +grid-pai()
+
+
+.colunagem-6
+    width: 50%
+    padding-left: $espacamento-entre-colunas
+    &:first-of-type
+        padding-left: 0
+
+.colunagem-6
+    width: 50%
+    padding-left: $espacamento-entre-colunas
+    &:first-of-type
+        padding-left: 0
+
+.colunagem-4
+    width: 33.33%
+    padding-left: $espacamento-entre-colunas
+    &:first-of-type
+        padding-left: 0
+
+.colunagem-3
+    width: 25%
+    padding-left: $espacamento-entre-colunas
+    &:first-of-type
+        padding-left: 0
+
+
+.colunagem-2
+    width: 16.66%
+    padding-left: $espacamento-entre-colunas
+    &:first-of-type
+        padding-left: 0
