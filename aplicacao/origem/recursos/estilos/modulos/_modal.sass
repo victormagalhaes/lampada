@@ -1,0 +1,53 @@
+.janela-modal
+	height: 100%
+	position: absolute
+	width: 100%
+	.agrupador-modal
+		border-bottom: solid 1px #dedede
+		padding: 15px 20px 15px 20px
+		background-color: #fff
+
+	.area-modal
+		position: relative
+		height: 100%
+		width: 100
+
+	.botao-modal
+		margin: -5px -10px 0 0
+		display: block
+		background: url('../images/botao-fechar.png') no-repeat 0 0
+		width: 17px
+		height: 17px
+
+		float: right
+		&:hover
+			opacity: 0.8
+
+
+	.conteudo-modal
+		background-color: #fff
+		position: absolute
+		z-index: 2147483641
+
+	.item-modal
+		background-color: #fff
+
+	.protecao-modal
+		opacity: 0.8
+		background-color: #000
+		height: 100%
+		left: 0
+		position: absolute
+		top: 0
+		width: 100%
+		z-index: 2147483641
+
+	.titulo-modal
+		color: #666
+		font-family: Arial, sans-serif
+		font-size: 26px
+		text-transform: uppercase
+
+	&.luz
+		.protecao-modal
+			z-index: 95
