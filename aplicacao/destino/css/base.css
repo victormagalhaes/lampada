@@ -67,12 +67,6 @@ table {
   .colunagem-6:first-of-type {
     padding-left: 0; }
 
-.colunagem-6 {
-  width: 50%;
-  padding-left: 20px; }
-  .colunagem-6:first-of-type {
-    padding-left: 0; }
-
 .colunagem-4 {
   width: 33.33%;
   padding-left: 20px; }
@@ -91,6 +85,20 @@ table {
   .colunagem-2:first-of-type {
     padding-left: 0; }
 
+a {
+  color: #bf4163; }
+@-webkit-keyframes color-change {
+  a:hover 100%  {
+    background-color: #bf4163; } }
+@-ms-keyframes color-change {
+  a:hover 100%  {
+    background-color: #bf4163; } }
+@-ms-keyframes color-change {
+  a:hover 100%  {
+    background-color: #bf4163; } }
+@keyframes color-change {
+  a:hover 100%  {
+    background-color: #bf4163; } }
 .placeholder-demo {
   background-color: #dedede;
   padding: 20px;
@@ -131,5 +139,5 @@ table {
   transition: all 0.3s; }
 
 .colunagem-12 {
-  width: 940px;
+  max-width: 940px;
   margin: 40px auto; }

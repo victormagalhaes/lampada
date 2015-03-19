@@ -9,11 +9,8 @@ var parametros = {
     // Caminho onde ficam todos os arquivos fontes
     origem: aplicacao + '/origem',
 
-    // Caminho que serão gerados os arquivos para uma versão local ou de desenvolvimento
-    desenvolvimento: aplicacao + '/desenvolvimento',
-
     // Caminho para qual serão gerados os arquivos otimizados
-    producao: aplicacao + '/producao',
+    destino: aplicacao + '/destino',
 
     // Caminho onde ficam armazenados os recursos da framework
     recursos: aplicacao + '/origem/recursos',
@@ -31,7 +28,10 @@ var parametros = {
     imagens: recursos + '/imagens',
 
     // Nome do arquivo que faz todos os includes de SASS da framework
-    arquivo_base_sass: recursos + '/estilos/base.sass'
+    arquivo_base_sass: recursos + '/estilos/base.sass',
+
+    // Minificar arquivos na compilação?
+    minificar: true
 };
 
 module.exports = parametros;
