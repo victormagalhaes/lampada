@@ -29,5 +29,3 @@ npm install
 O lâmpada mágica tem 3 comandos que controlam suas ações:
 
 * _gulp monitorar_ - Esse comando serve para observar as pastas dos arquivos fontes e atualizar a pasta de desenvolvimento quando houver alguma mudança.
-* _gulp compilar-desenvolvimento_ - Esse comando serve para compilar todos os arquivos que existem na pasta dos arquivos fontes e atualizar todos da pasta de desenvolvimento.
-* _gulp compilar-producao_ - Parecido com o acima, só que manda a versão minificada dos arquivos para a pasta de produção.
