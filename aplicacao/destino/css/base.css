@@ -88,17 +88,17 @@ table {
 a {
   color: #bf4163; }
 @-webkit-keyframes color-change {
-  a:hover 100%  {
-    background-color: #bf4163; } }
+  a:hover to {
+    color: #3b67bf; } }
 @-ms-keyframes color-change {
-  a:hover 100%  {
-    background-color: #bf4163; } }
+  a:hover to {
+    color: #3b67bf; } }
 @-ms-keyframes color-change {
-  a:hover 100%  {
-    background-color: #bf4163; } }
+  a:hover to {
+    color: #3b67bf; } }
 @keyframes color-change {
-  a:hover 100%  {
-    background-color: #bf4163; } }
+  a:hover to {
+    color: #3b67bf; } }
 .placeholder-demo {
   background-color: #dedede;
   padding: 20px;
